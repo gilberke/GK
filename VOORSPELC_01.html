@@ -1,0 +1,152 @@
+<script>
+    function selectElementContents(el) {
+        var body = document.body, range, sel;
+        if (document.createRange && window.getSelection) {
+            range = document.createRange();
+            sel = window.getSelection();
+            sel.removeAllRanges();
+            try {
+                range.selectNodeContents(el);
+                sel.addRange(range);
+            } catch (e) {
+                range.selectNode(el);
+                sel.addRange(range);
+            }
+            document.execCommand("copy");
+
+        } else if (body.createTextRange) {
+            range = body.createTextRange();
+            range.moveToElementText(el);
+            range.select();
+            range.execCommand("Copy");
+        }
+    }
+    </script><table border="1" class="dataframe" id="tableId">
+  <tbody>
+    <tr>
+      <td>FSM</td>
+      <td>20210209|143421</td>
+      <td>20210208_16986_04_44548_29261</td>
+      <td>Nur-Sultan RD04TR0</td>
+      <td>Smith</td>
+      <td>Brugnerotto</td>
+      <td>0.765869</td>
+      <td>NAM0_T1OK1_T2OK0|1.31|131|4.28|5.992|0</td>
+      <td>1.31</td>
+      <td>3.32</td>
+      <td>https://www.oddsportal.com/tennis/kazakhstan/itf-m15-nur-sultan-2-men/smith-roy-brugnerotto-marco-A9zVIrmR/</td>
+      <td>1.30</td>
+      <td>3.29</td>
+      <td>1.31</td>
+      <td>3.32</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>FSM</td>
+      <td>20210209|143427</td>
+      <td>20210208_16987_04_33284_50143</td>
+      <td>Sharm El Sheikh RD04TR0</td>
+      <td>Moreno De Alboran</td>
+      <td>Noguchi</td>
+      <td>0.606812</td>
+      <td>NAM0_T1OK1_T2OK1|1.65|165|2.55|3.57|0</td>
+      <td>1.52</td>
+      <td>2.47</td>
+      <td>https://www.oddsportal.com/tennis/egypt/itf-m15-sharm-el-sheikh-2-men/moreno-de-alboran-nicolas-noguchi-rio-fua3wGTH/</td>
+      <td>1.49</td>
+      <td>2.47</td>
+      <td>1.52</td>
+      <td>2.46</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>FSM</td>
+      <td>20210209|143435</td>
+      <td>20210208_16985_04_29813_62258</td>
+      <td>St. Petersburg RD04TR0</td>
+      <td>Cozbinov</td>
+      <td>Michalski</td>
+      <td>0.486689</td>
+      <td>NAM0_T1OK1_T2OK1|2.06|2.884|1.95|195|0</td>
+      <td>1.97</td>
+      <td>1.80</td>
+      <td>https://www.oddsportal.com/tennis/russia/itf-m15-st-petersburg-2-men/cozbinov-alexander-michalski-daniel-OhCm653L/</td>
+      <td>1.96</td>
+      <td>1.78</td>
+      <td>1.97</td>
+      <td>1.80</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>FSM</td>
+      <td>20210209|143441</td>
+      <td>20210208_16985_04_07286_40187</td>
+      <td>St. Petersburg RD04TR0</td>
+      <td>Ivanov</td>
+      <td>Guerrieri</td>
+      <td>0.507678</td>
+      <td>NAM0_T1OK1_T2OK1|1.97|197|2.04|2.856|0</td>
+      <td>1.56</td>
+      <td>2.36</td>
+      <td>https://www.oddsportal.com/tennis/russia/itf-m15-st-petersburg-2-men/ivanov-vladimir-guerrieri-andrea-p2Dq7olF/</td>
+      <td></td>
+      <td></td>
+      <td>1.56</td>
+      <td>2.36</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>FSM</td>
+      <td>20210209|143446</td>
+      <td>20210208_16985_04_72877_24082</td>
+      <td>St. Petersburg RD04TR0</td>
+      <td>Kachmazov</td>
+      <td>Deviatiarov</td>
+      <td>0.673852</td>
+      <td>NAM0_T1OK1_T2OK1|1.49|149|3.07|4.298|0</td>
+      <td>1.52</td>
+      <td>2.40</td>
+      <td>https://www.oddsportal.com/tennis/russia/itf-m15-st-petersburg-2-men/kachmazov-alibek-deviatiarov-marat-MTRlo4Re/</td>
+      <td>1.52</td>
+      <td>2.40</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table><input type="button" value="select table" onclick="selectElementContents(document.getElementById('tableId') );">
